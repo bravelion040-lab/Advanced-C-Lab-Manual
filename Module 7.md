@@ -1,4 +1,4 @@
-<img width="1216" height="562" alt="image" src="https://github.com/user-attachments/assets/4ae0535d-36ba-458e-b9c3-464759eedb55" />EXP NO:1 C PROGRAM FOR ARRAY OF STRUCTURE TO CHECK ELIGIBILITY FOR THE VACCINE.
+EXP NO:1 C PROGRAM FOR ARRAY OF STRUCTURE TO CHECK ELIGIBILITY FOR THE VACCINE.
 
 Aim:
 To write a C program for array of structure to check eligibility for the vaccine person age above 6 years of age.
