@@ -333,10 +333,7 @@ int main()
 
 Output:
 
-
-
-![Uploading image.png…]()
-
+<img width="1150" height="290" alt="Screenshot 2026-09-19 162246" src="https://github.com/user-attachments/assets/3f3d6351-c858-4a89-b6bc-b9e45f41f4e2" />
 
 
 Result:
