@@ -15,13 +15,40 @@ Else
 6.	Return 0
  
 Program:
+```
+#include <stdio.h>
 
-//type your code here
+struct Person
+{
+    int age;
+    char name[50];
+};
+
+int main()
+{
+    struct Person p[1];
+
+    scanf("%d", &p[0].age);
+    scanf("%s", p[0].name);
+
+    printf("Age:%d\n", p[0].age);
+    printf("Name:%s", p[0].name);
+    printf("vaccine:%d\n", p[0].age);
+
+    if (p[0].age > 18)
+        printf("eligibility:yes");
+    else
+        printf("eligibility:no");
+
+    return 0;
+}
+```
 
 
 Output:
 
-//paste your output here
+<img width="1082" height="312" alt="image" src="https://github.com/user-attachments/assets/7c58acfe-473e-4d0c-99ac-4cbc828dc02c" />
+
 
 
 Result:
@@ -43,16 +70,47 @@ Algorithm:
 7.	Return 0
  
 Program:
+```
+#include <stdio.h>
 
-//type your code here
+struct Data
+{
+    int a;
+    int b;
+};
+
+struct Data calculate(struct Data x,struct Data y)
+{
+    struct Data r;
+
+    r.b = x.b + x.a;
+
+    return r;
+}
+
+int main()
+{
+    struct Data s1, s2, ans;
+
+    scanf("%d", &s1.a);
+    scanf("%d", &s1.b);
+    scanf("%d", &s2.a);
+    scanf("%d", &s2.b);
+
+    ans = calculate(s1, s2);
+
+    printf("%d", ans.b);
+
+    return 0;
+}
+```
 
 
 
 
 Output:
 
-
-//paste your output here
+<img width="802" height="392" alt="image" src="https://github.com/user-attachments/assets/be0b8f76-9587-4c7f-af27-36ec49e155bc" />
 
 
 
@@ -85,23 +143,30 @@ Use scanf to input the file name into the name array.
 5.	Return 0 to indicate successful program execution.
  
 Program:
+```
+#include <stdio.h>
 
-//type your code here
+int main()
+{
+    FILE *fp;
 
+    fp = fopen("Employee.txt", "w");
 
+    printf("File Created Successfully\n");
+    printf("File Opened\n");
 
+    fclose(fp);
+
+    printf("File Closed");
+
+    return 0;
+}
+```
 
 Output:
 
 
-//paste your output here
-
-
-
-
-
-
-
+<img width="906" height="272" alt="image" src="https://github.com/user-attachments/assets/ef8d66ad-ccfd-42eb-896c-4f84f11b1ef2" />
 
 
 
@@ -132,18 +197,49 @@ Use scanf to input the file name into the name array and the number of strings i
 5.	Return 0 to indicate successful program execution.
  
 Program:
+```
+#include <stdio.h>
 
-//type your code here
+int main()
+{
+    FILE *fp;
+    char filename[50];
+    char text[100];
+    int n, i;
 
+    scanf("%s", filename);
 
+    fp = fopen(filename, "w");
+
+    if(fp == NULL)
+    {
+        printf("File cannot be opened");
+        return 0;
+    }
+
+    printf("%s Opened\n", filename);
+
+    scanf("%d", &n);
+
+    for(i = 0; i < n; i++)
+    {
+        scanf(" %[^\n]", text);
+        fprintf(fp, "%s\n", text);
+    }
+
+    fclose(fp);
+
+    printf("Data added Successfully");
+
+    return 0;
+}
+```
 
 
 Output:
 
 
-//paste your output here
-
-
+<img width="791" height="457" alt="image" src="https://github.com/user-attachments/assets/1d6ebf55-da70-4cbd-a886-6fe4f34e6caf" />
 
 
 
@@ -153,10 +249,10 @@ Thus, the program is verified successfully
 
 
 
-Ex No 5 : C PROGRAM TO DISPLAY STUDENT DETAILS USING STRUCTURE
+Ex No 5 : C PROGRAM TO DISPLAY HARDWARE DETAILS USING STRUCTURE
 
 Aim:
-The aim of this program is to dynamically allocate memory to store information about multiple subjects (name and marks), input the details for each subject, and then display the stored information. Finally, it frees the allocated memory to prevent memory leaks.
+The aim of this program is to dynamically allocate memory to store information about multiple subjects (QRcode,price and product), input the details for each subject, and then display the stored information. Finally, it frees the allocated memory to prevent memory leaks.
 
 Algorithm:
 1.Input the number of subjects.
@@ -171,11 +267,11 @@ Algorithm:
 
 6.Input the details of each subject
 
-7.Use a for loop to read the name and marks of each subject using scanf. For each subject, store the name as a string and marks as an integer in the dynamically allocated memory.
+7.Use a for loop to read the QRcode,price and product of each subject using scanf. For each subject, store the QRcode as a string and price as an integer in the dynamically allocated memory.
 
 8.Display the details of each subject
 
-9.Use another for loop to print the name and marks of each subject.
+9.Use another for loop to print the  QRcode,price and product of each subject.
 
 10.Free the allocated memory
 
@@ -186,8 +282,40 @@ Algorithm:
 13.End the program by returning 0.
 
 Program:
+```
+#include <stdio.h>
 
-//type your code here
+struct Hardware
+{
+    char QRcode[20];
+    char product[30];
+    int price;
+};
+
+int main()
+{
+    struct Hardware h[3];
+    int i;
+
+    // Input details
+    for(i = 0; i < 3; i++)
+    {
+        scanf("%s", h[i].QRcode);
+        scanf("%s", h[i].product);
+        scanf("%d", &h[i].price);
+    }
+
+    // Display details
+    for(i = 0; i < 3; i++)
+    {
+        printf("QRcode:%s\n", h[i].QRcode);
+        printf("product:%s\n", h[i].product);
+        printf("price :%d\n", h[i].price);
+    }
+
+    return 0;
+}
+```
 
 
 
@@ -195,9 +323,7 @@ Program:
 Output:
 
 
-//paste your output here
-
-
+<img width="1216" height="562" alt="image" src="https://github.com/user-attachments/assets/f1d473ff-4050-4748-a69f-c5581c396562" />
 
 
 
