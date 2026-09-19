@@ -13,11 +13,22 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+char stack[100];
+int top,i;
+void display()
+{
+    for(i=top;i>=0;i--)
+    {
+        printf("%c\n",stack[i]);
+    }
+}
+```
 
 Output:
 
-//paste your output here
+<img width="615" height="577" alt="image" src="https://github.com/user-attachments/assets/3c10aaf8-8ef0-47d4-8a72-7a168e3094bd" />
+
 
 
 
@@ -36,13 +47,26 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+int size=3,top=-1,stack[100];
+void push (int data)
+{
+    if (top == size-1 )
+    {
+    printf("stack is full");
+    }
+    else
+    {
+        top = top +1;
+        stack[top] = data;
+    }
+}
+```
 
 Output:
 
-//paste your output here
 
-
+<img width="970" height="545" alt="image" src="https://github.com/user-attachments/assets/799a952e-5a19-4266-87e7-30a9d88f2a8d" />
 
 
 Result:
@@ -62,11 +86,26 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+int queue[50], rear=-1, front=-1;
+int i;
+void display()
+{
+    if(front==-1 || front>rear)
+    {
+        printf("No elements to display\n");
+    }
+    else{
+        for(i=front;i<=rear;i++)
+            printf("%d ",queue[i]);
+    }
+}
+```
 
 Output:
 
-//paste your output here
+<img width="965" height="527" alt="image" src="https://github.com/user-attachments/assets/0b9efed2-8881-4352-a685-62a5a9c09373" />
+
 
 
 Result:
@@ -86,11 +125,28 @@ Algorithm:
 
 Program:
 
-//type your code here
+```
+int queue[50];
+int front=-1,rear=-1;
+int size=3;
+void enqueue(int data)
+{
+    if(rear<size)
+    {
+        if(front==-1)
+            front=0;
+    }
+    rear++;
+    queue[rear]=data;
+    
+}
+```
 
 Output:
 
-//paste your output here
+<img width="927" height="467" alt="image" src="https://github.com/user-attachments/assets/80137a79-cbdd-4cad-945c-6239a210968b" />
+
+
 
 Result:
 Thus, the program to insert elements in queue using array is verified successfully.
@@ -121,11 +177,27 @@ o	After deletion, check if the front pointer has passed the rear pointer (front 
 
 Program:
 
-//type your code here
+```
+int queue[50];
+int front, rear;
+void dequeue()
+{
+    if(front==-1)
+    {
+        printf("No elements to display\n");
+    }
+    else
+    {
+        front++;
+    }
+}
+```
 
 Output:
 
-//paste your output here
+<img width="1002" height="641" alt="image" src="https://github.com/user-attachments/assets/cea4dea4-5f64-425a-a230-abeaa5cba0f8" />
+
+
 
 
 Result:
