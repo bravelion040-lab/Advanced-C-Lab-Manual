@@ -1,4 +1,4 @@
-EXP NO:1 C PROGRAM FOR ARRAY OF STRUCTURE TO CHECK ELIGIBILITY FOR THE VACCINE.
+<img width="1216" height="562" alt="image" src="https://github.com/user-attachments/assets/4ae0535d-36ba-458e-b9c3-464759eedb55" />EXP NO:1 C PROGRAM FOR ARRAY OF STRUCTURE TO CHECK ELIGIBILITY FOR THE VACCINE.
 
 Aim:
 To write a C program for array of structure to check eligibility for the vaccine person age above 6 years of age.
@@ -16,12 +16,39 @@ Else
  
 Program:
 
-//type your code here
+```
+#include <stdio.h>
+
+struct Person
+{
+    int age;
+    char name[50];
+};
+
+int main()
+{
+    struct Person p[1];
+
+    scanf("%d", &p[0].age);
+    scanf("%s", p[0].name);
+
+    printf("Age:%d\n", p[0].age);
+    printf("Name:%s", p[0].name);
+    printf("vaccine:%d\n", p[0].age);
+
+    if (p[0].age > 18)
+        printf("eligibility:yes");
+    else
+        printf("eligibility:no");
+
+    return 0;
+}
+```
 
 
 Output:
 
-//paste your output here
+<img width="1082" height="312" alt="Screenshot 2026-09-19 154523" src="https://github.com/user-attachments/assets/c2077a60-213a-4507-8ffc-bb78e0634c44" />
 
 
 Result:
@@ -44,7 +71,40 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+#include <stdio.h>
+
+struct Data
+{
+    int a;
+    int b;
+};
+
+struct Data calculate(struct Data x,struct Data y)
+{
+    struct Data r;
+
+    r.b = x.b + x.a;
+
+    return r;
+}
+
+int main()
+{
+    struct Data s1, s2, ans;
+
+    scanf("%d", &s1.a);
+    scanf("%d", &s1.b);
+    scanf("%d", &s2.a);
+    scanf("%d", &s2.b);
+
+    ans = calculate(s1, s2);
+
+    printf("%d", ans.b);
+
+    return 0;
+}
+```
 
 
 
@@ -52,7 +112,7 @@ Program:
 Output:
 
 
-//paste your output here
+<img width="802" height="392" alt="Screenshot 2026-09-19 154642" src="https://github.com/user-attachments/assets/c3421e25-72a3-479e-aa0f-2d93f37c2281" />
 
 
 
@@ -86,7 +146,25 @@ Use scanf to input the file name into the name array.
  
 Program:
 
-//type your code here
+```
+#include <stdio.h>
+
+int main()
+{
+    FILE *fp;
+
+    fp = fopen("Employee.txt", "w");
+
+    printf("File Created Successfully\n");
+    printf("File Opened\n");
+
+    fclose(fp);
+
+    printf("File Closed");
+
+    return 0;
+}
+```
 
 
 
@@ -94,14 +172,8 @@ Program:
 Output:
 
 
-//paste your output here
 
-
-
-
-
-
-
+<img width="906" height="272" alt="Screenshot 2026-09-19 154741" src="https://github.com/user-attachments/assets/23ca8316-5caa-49d7-9dcf-b16098c18996" />
 
 
 
@@ -133,18 +205,50 @@ Use scanf to input the file name into the name array and the number of strings i
  
 Program:
 
-//type your code here
+```
+#include <stdio.h>
 
+int main()
+{
+    FILE *fp;
+    char filename[50];
+    char text[100];
+    int n, i;
+
+    scanf("%s", filename);
+
+    fp = fopen(filename, "w");
+
+    if(fp == NULL)
+    {
+        printf("File cannot be opened");
+        return 0;
+    }
+
+    printf("%s Opened\n", filename);
+
+    scanf("%d", &n);
+
+    for(i = 0; i < n; i++)
+    {
+        scanf(" %[^\n]", text);
+        fprintf(fp, "%s\n", text);
+    }
+
+    fclose(fp);
+
+    printf("Data added Successfully");
+
+    return 0;
+}
+```
 
 
 
 Output:
 
 
-//paste your output here
-
-
-
+<img width="791" height="458" alt="Screenshot 2026-09-19 154847" src="https://github.com/user-attachments/assets/59815eb6-4d62-4caf-85bb-b2c9f5b9eae7" />
 
 
 
@@ -153,10 +257,10 @@ Thus, the program is verified successfully
 
 
 
-Ex No 5 : C PROGRAM TO DISPLAY STUDENT DETAILS USING STRUCTURE
+Ex No 5 : C PROGRAM TO DISPLAY HARDWARE DETAILS USING STRUCTURE
 
 Aim:
-The aim of this program is to dynamically allocate memory to store information about multiple subjects (name and marks), input the details for each subject, and then display the stored information. Finally, it frees the allocated memory to prevent memory leaks.
+The aim of this program is to dynamically allocate memory to store information about multiple subjects (qrcode,product,price), input the details for each subject, and then display the stored information. Finally, it frees the allocated memory to prevent memory leaks.
 
 Algorithm:
 1.Input the number of subjects.
@@ -187,17 +291,49 @@ Algorithm:
 
 Program:
 
-//type your code here
+```
+#include <stdio.h>
 
+struct Hardware
+{
+    char QRcode[20];
+    char product[30];
+    int price;
+};
+
+int main()
+{
+    struct Hardware h[3];
+    int i;
+
+    // Input details
+    for(i = 0; i < 3; i++)
+    {
+        scanf("%s", h[i].QRcode);
+        scanf("%s", h[i].product);
+        scanf("%d", &h[i].price);
+    }
+
+    // Display details
+    for(i = 0; i < 3; i++)
+    {
+        printf("QRcode:%s\n", h[i].QRcode);
+        printf("product:%s\n", h[i].product);
+        printf("price :%d\n", h[i].price);
+    }
+
+    return 0;
+}
+```
 
 
 
 Output:
 
 
-//paste your output here
 
 
+<img width="1216" height="562" alt="Screenshot 2026-09-19 155305" src="https://github.com/user-attachments/assets/98ea9648-82d0-4c8c-9ea8-498fc165f431" />
 
 
 
